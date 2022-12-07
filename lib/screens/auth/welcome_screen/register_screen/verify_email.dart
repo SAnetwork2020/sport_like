@@ -23,6 +23,7 @@ class VerifyEmail extends StatefulWidget {
 }
 
 class _VerifyEmailState extends State<VerifyEmail> {
+  final user = FirebaseAuth.instance.currentUser!;
   bool isEmailVerified = false;
   Timer? timer;
   @override
@@ -111,7 +112,7 @@ class _VerifyEmailState extends State<VerifyEmail> {
                   ),
                   children: [
                     TextSpan(
-                      text: "hello.julian23@email.com",
+                      text: "${user.email}",
                       style: TextStyle(
                         color: kPrimaryColor,
                         fontWeight: FontWeight.w700,
