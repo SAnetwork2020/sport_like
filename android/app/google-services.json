@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "1037848385984",
+    "project_id": "auto-route-2901c",
+    "storage_bucket": "auto-route-2901c.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1037848385984:android:20b39dbb48372c7236d025",
+        "android_client_info": {
+          "package_name": "com.example.sport_like"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1037848385984-tq0t42pt8d401bb8u70hca6475ch8v2c.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC9jt3BZBMe5PLVehZT8FMbc8cxpw4S0L0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1037848385984-tq0t42pt8d401bb8u70hca6475ch8v2c.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
