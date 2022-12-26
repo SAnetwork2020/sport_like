@@ -42,7 +42,7 @@ class _LoginScreenState extends State<LoginScreen> {
         email: emailController.text.trim(),
         password: passwordController.text.trim(),
       );
-      getIt<AppRouter>().pushNamed(tabScreenRoute);
+      getIt<AppRouter>().pushNamed(followsportsScreen);
     } on FirebaseAuthException catch (e) {
       print(e);
       // Utils.showSnackBar(e.message);

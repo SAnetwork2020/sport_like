@@ -25,7 +25,7 @@ class _SplashScreenState extends State<SplashScreen> {
   gotoNextScreen() {
     Future.delayed(
       const Duration(seconds: 5),
-      () => getIt<AppRouter>().replaceNamed(onboardingScreenRoute),
+      () => getIt<AppRouter>().replaceNamed(authScreen),
     );
   }
 

@@ -45,7 +45,7 @@ import 'route_names.dart';
           page: WelcomeScreen,
           initial: true,
         ),
-        AutoRoute(
+                AutoRoute(
           path: "register",
           page: RegisterScreenBase,
           children: [
@@ -72,6 +72,7 @@ import 'route_names.dart';
             ),
           ],
         ),
+
         AutoRoute(
           path: "login",
           page: LoginScreenBase,

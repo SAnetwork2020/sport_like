@@ -1,6 +1,9 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:sport_like/locator.dart';
+import 'package:sport_like/routes/route_names.dart';
+import 'package:sport_like/routes/routes.gr.dart';
 import 'package:sport_like/utils/extensions.dart';
 
 import '../../constants.dart';
@@ -52,7 +55,10 @@ class Profile extends StatelessWidget {
             ),
             16.toColumnSizedBox(),
             TextButton(
-              onPressed: () => FirebaseAuth.instance.signOut(),
+              onPressed: () {
+                getIt<AppRouter>().popUntilRoot();
+                FirebaseAuth.instance.signOut();
+              },
               child: Text(
                 "Logout",
                 textAlign: TextAlign.center,

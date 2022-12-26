@@ -42,7 +42,7 @@ class RegisterComplete extends StatelessWidget {
             Text.rich(
               textAlign: TextAlign.center,
               TextSpan(
-                text: "Didn’t receive the OTP?",
+                text: "Want a different goals?",
                 style: TextStyle(
                   color: kNeutralGrey,
                   fontWeight: FontWeight.w500,
@@ -51,7 +51,7 @@ class RegisterComplete extends StatelessWidget {
                 ),
                 children: const [
                   TextSpan(
-                    text: " Resend OTP in 0:30",
+                    text: " Click in here",
                     style: TextStyle(
                       color: kPrimaryColor,
                       fontWeight: FontWeight.w700,
@@ -60,7 +60,7 @@ class RegisterComplete extends StatelessWidget {
                 ],
               ),
             ),
-            60.toColumnSizedBox(),
+            18.toColumnSizedBox(),
             GradientButton(
               onTap: () {
                 getIt<AppRouter>().pushNamed(profileTabScreen);

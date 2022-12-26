@@ -13,7 +13,9 @@ Future main() async {
   await Firebase.initializeApp();
   setUpLocator();
   runApp(
-    const MyApp(),
+    const ProviderScope(
+      child: MyApp(),
+    ),
   );
 }
 

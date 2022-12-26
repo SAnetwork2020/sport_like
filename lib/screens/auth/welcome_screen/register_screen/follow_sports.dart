@@ -29,6 +29,11 @@ class FollowSports extends StatelessWidget {
       "icon": Assets.icons.golf,
     },
     {
+      "title": "Basketball",
+      "checkstatus": true,
+      "icon": Assets.icons.basketball,
+    },
+    {
       "title": "Motosport",
       "checkstatus": false,
       "icon": Assets.icons.motosport,
@@ -75,7 +80,7 @@ class FollowSports extends StatelessWidget {
     return Scaffold(
       body: SafeArea(
         child: Padding(
-          padding: EdgeInsets.symmetric(horizontal: 24.0.w),
+          padding: EdgeInsets.symmetric(horizontal: 18.0.w),
           child: SingleChildScrollView(
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
@@ -102,20 +107,27 @@ class FollowSports extends StatelessWidget {
                 ),
                 40.toColumnSizedBox(),
                 Wrap(
+                  spacing: 12.w,
+                  runSpacing: 12.w,
+                  alignment: WrapAlignment.spaceBetween,
+                  runAlignment: WrapAlignment.spaceBetween,
                   direction: Axis.horizontal,
                   children: List.generate(
                     favourites.length,
                     (index) => FavouriteSports(
                       checkedStatus: favourites[index]["checkstatus"],
-                      icon: favourites[index]["title"],
+                      icon: favourites[index]["icon"],
                       title: favourites[index]["title"],
                     ),
                   ),
                 ),
+                92.toColumnSizedBox(),
                 DefaultButton(
-                  onTap: () => getIt<AppRouter>().pushNamed(registercompleteScreen),
+                  onTap: () =>
+                      getIt<AppRouter>().pushNamed(registercompleteScreen),
                   title: 'Done',
                 ),
+                80.toColumnSizedBox(),
               ],
             ),
           ),
@@ -137,34 +149,37 @@ class FavouriteSports extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      padding: EdgeInsets.all(16.w),
-      decoration: BoxDecoration(
-        color: checkedStatus ? const Color(0xffF5FFFA) : kWhite,
-        borderRadius: BorderRadius.circular(16),
-        border: Border.all(
-          color: const Color(0xffeaedf1),
+    return FittedBox(
+      child: Container(
+        padding: EdgeInsets.all(16.w),
+        // margin: EdgeInsets.all(4.w),
+        decoration: BoxDecoration(
+          color: checkedStatus ? const Color(0xffF5FFFA) : kWhite,
+          borderRadius: BorderRadius.circular(16.r),
+          border: Border.all(
+            color: const Color(0xffeaedf1),
+          ),
         ),
-      ),
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        children: [
-          SvgPicture.asset(Assets.icons.football),
-          16.toRowSizedBox(),
-          Text(
-            title,
-            style: TextStyle(
-              color: kPrimaryColor,
-              fontWeight: FontWeight.w400,
-              fontSize: 14.sp,
-              height: 21.toLineHeight(14),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            SvgPicture.asset(icon),
+            10.toRowSizedBox(),
+            Text(
+              title,
+              style: TextStyle(
+                color: kPrimaryColor,
+                fontWeight: FontWeight.w400,
+                fontSize: 14.sp,
+                height: 21.toLineHeight(14),
+              ),
             ),
-          ),
-          16.toRowSizedBox(),
-          SvgPicture.asset(
-            checkedStatus ? Assets.icons.check : Assets.icons.uncheck,
-          ),
-        ],
+            12.toRowSizedBox(),
+            SvgPicture.asset(
+              checkedStatus ? Assets.icons.check : Assets.icons.uncheck,
+            ),
+          ],
+        ),
       ),
     );
   }
